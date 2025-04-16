@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW France : Créer un compte</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .signup-page {
+            background-color: var(--bmw-light-grey);
+            min-height: calc(100vh - var(--header-height));
+            padding: 120px 20px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .signup-container {
+            max-width: 500px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .signup-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .signup-title {
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--bmw-dark-grey);
+            margin-bottom: 10px;
+        }
+        
+        .signup-subtitle {
+            font-size: 16px;
+            color: var(--bmw-grey);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--bmw-dark-grey);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--bmw-blue);
+            box-shadow: 0 0 0 3px rgba(0, 102, 177, 0.1);
+            outline: none;
+        }
+        
+        .name-fields {
+            display: flex;
+            gap: 16px;
+        }
+        
+        .name-field {
+            flex: 1;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--bmw-blue);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--bmw-light-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .signup-footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--bmw-grey);
+        }
+        
+        .account-link {
+            color: var(--bmw-blue);
+            font-weight: 500;
+        }
+        
+        .account-link:hover {
+            text-decoration: underline;
+        }
+        
+        .form-control.animated {
+            transition: all 0.3s ease;
+        }
+        
+        .form-control.animated:focus {
+            transform: scale(1.02);
+        }
+        
+        .form-benefits {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(0, 102, 177, 0.05);
+            border-radius: 8px;
+        }
+        
+        .form-error {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 5px;
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        .alert {
+            padding: 12px 16px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 14px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .alert-danger {
+            background-color: rgba(231, 76, 60, 0.1);
+            border-left: 4px solid #e74c3c;
+            color: #c0392b;
+        }
+        
+        .alert-success {
+            background-color: rgba(46, 204, 113, 0.1);
+            border-left: 4px solid #2ecc71;
+            color: #27ae60;
+        }
+        
+        .benefits-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--bmw-dark-grey);
+        }
+        
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .benefits-list li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--bmw-grey);
+        }
+        
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--bmw-blue);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/bmw-logo-real.svg" alt="BMW Logo" class="bmw-logo">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="modeles-configurateur.html">Modèles & Configurateur</a></li>
+                    <li class="nav-item"><a href="gamme-electrique.html">Gamme électrique</a></li>
+                    <li class="nav-item"><a href="acheter.html">Acheter</a></li>
+                    <li class="nav-item"><a href="marque-services.html">Marque & Services</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="signup.html" class="icon-link" aria-label="S'inscrire">
+                    <span class="icon icon-user"></span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Panier">
+                    <span class="icon icon-cart"></span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Favoris">
+                    <span class="icon icon-heart"></span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Recherche">
+                    <span class="icon icon-search"></span>
+                </a>
+                <a href="signup.html" class="signup-button">S'inscrire</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="signup-page">
+            <div class="signup-container">
+                <div class="signup-header">
+                    <h1 class="signup-title">Créer un compte</h1>
+                    <p class="signup-subtitle">Rejoignez la communauté BMW et accédez à des services exclusifs</p>
+                </div>
+                
+                <form method="post" action="signup_success.html" id="signup-form">
+                    <div class="name-fields">
+                        <div class="form-group name-field">
+                            <label for="first_name" class="form-label">Prénom</label>
+                            <input type="text" id="first_name" name="first_name" class="form-control animated" required>
+                            <div class="form-error" id="first-name-error" style="display: none;"></div>
+                        </div>
+                        <div class="form-group name-field">
+                            <label for="last_name" class="form-label">Nom</label>
+                            <input type="text" id="last_name" name="last_name" class="form-control animated" required>
+                            <div class="form-error" id="last-name-error" style="display: none;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" class="form-control animated" required>
+                        <div class="form-error" id="email-error" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" id="password" name="password" class="form-control animated" required>
+                        <div class="form-error" id="password-error" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirm_password" class="form-label">Confirmez le mot de passe</label>
+                        <input type="password" id="confirm_password" name="confirm_password" class="form-control animated" required>
+                        <div class="form-error" id="confirm-password-error" style="display: none;"></div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Créer mon compte</button>
+                </form>
+                
+                <div class="form-benefits">
+                    <h3 class="benefits-title">Les avantages de votre compte</h3>
+                    <ul class="benefits-list">
+                        <li>Accédez à votre historique de configurations BMW</li>
+                        <li>Suivez votre commande en temps réel</li>
+                        <li>Prenez rendez-vous en ligne pour l'entretien de votre véhicule</li>
+                        <li>Recevez des offres personnalisées et exclusives</li>
+                    </ul>
+                </div>
+                
+                <div class="signup-footer">
+                    <p>Vous avez déjà un compte? <a href="#" class="account-link">Connectez-vous</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3 class="footer-title">Découvrir BMW</h3>
+                    <ul class="footer-links">
+                        <li><a href="modeles-configurateur.html">Modèles</a></li>
+                        <li><a href="gamme-electrique.html">Électrique</a></li>
+                        <li><a href="#">Hybride</a></li>
+                        <li><a href="modeles-configurateur.html">Configurateur</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="marque-services.html">Service après-vente</a></li>
+                        <li><a href="marque-services.html">Garantie</a></li>
+                        <li><a href="marque-services.html">Assistance</a></li>
+                        <li><a href="marque-services.html">Pièces & Accessoires</a></li>
+                        <li><a href="marque-services.html">Prise de rendez-vous</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Acheter</h3>
+                    <ul class="footer-links">
+                        <li><a href="acheter.html">Trouver un concessionnaire</a></li>
+                        <li><a href="acheter.html">Demande d'essai</a></li>
+                        <li><a href="acheter.html">Brochures & Tarifs</a></li>
+                        <li><a href="acheter.html">Offres de financement</a></li>
+                        <li><a href="acheter.html">BMW Premium Selection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Univers BMW</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">BMW Motorsport</a></li>
+                        <li><a href="#">BMW Individual</a></li>
+                        <li><a href="#">BMW M</a></li>
+                        <li><a href="#">Événements</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook" class="social-icon icon-facebook"></a>
+                    <a href="#" aria-label="Twitter" class="social-icon icon-twitter"></a>
+                    <a href="#" aria-label="Instagram" class="social-icon icon-instagram"></a>
+                    <a href="#" aria-label="YouTube" class="social-icon icon-youtube"></a>
+                </div>
+                <div class="footer-legal">
+                    <ul class="legal-links">
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <p class="copyright">© BMW France 2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Add animations and form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const formControls = document.querySelectorAll('.form-control');
+            const form = document.getElementById('signup-form');
+            
+            formControls.forEach(input => {
+                // Add focus animation
+                input.addEventListener('focus', function() {
+                    this.classList.add('active');
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.classList.remove('active');
+                });
+            });
+            
+            // Form validation
+            form.addEventListener('submit', function(e) {
+                let isValid = true;
+                
+                // Reset errors
+                document.querySelectorAll('.form-error').forEach(error => {
+                    error.style.display = 'none';
+                    error.textContent = '';
+                });
+                
+                // First name validation
+                const firstName = document.getElementById('first_name');
+                if (!firstName.value.trim()) {
+                    const error = document.getElementById('first-name-error');
+                    error.textContent = 'Le prénom est requis.';
+                    error.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Last name validation
+                const lastName = document.getElementById('last_name');
+                if (!lastName.value.trim()) {
+                    const error = document.getElementById('last-name-error');
+                    error.textContent = 'Le nom est requis.';
+                    error.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Email validation
+                const email = document.getElementById('email');
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!email.value.trim() || !emailRegex.test(email.value)) {
+                    const error = document.getElementById('email-error');
+                    error.textContent = 'Veuillez entrer une adresse e-mail valide.';
+                    error.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Password validation
+                const password = document.getElementById('password');
+                if (password.value.length < 8) {
+                    const error = document.getElementById('password-error');
+                    error.textContent = 'Le mot de passe doit contenir au moins 8 caractères.';
+                    error.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // Confirm password validation
+                const confirmPassword = document.getElementById('confirm_password');
+                if (confirmPassword.value !== password.value) {
+                    const error = document.getElementById('confirm-password-error');
+                    error.textContent = 'Les mots de passe ne correspondent pas.';
+                    error.style.display = 'block';
+                    isValid = false;
+                }
+                
+                // If form is not valid, prevent submission
+                if (!isValid) {
+                    e.preventDefault();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

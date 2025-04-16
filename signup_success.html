@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW France : Compte créé avec succès</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .success-page {
+            background-color: var(--bmw-light-grey);
+            min-height: calc(100vh - var(--header-height));
+            padding: 120px 20px 60px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .success-container {
+            max-width: 600px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+            animation: fadeInSuccess 0.8s ease-out;
+        }
+        
+        @keyframes fadeInSuccess {
+            0% { opacity: 0; transform: scale(0.9); }
+            70% { transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background-color: #27ae60;
+            color: white;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            animation: scaleIn 0.5s ease-in-out;
+        }
+        
+        @keyframes scaleIn {
+            0% { transform: scale(0); }
+            60% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-title {
+            font-size: 32px;
+            font-weight: 300;
+            color: var(--bmw-dark-grey);
+            margin-bottom: 20px;
+        }
+        
+        .success-message {
+            font-size: 18px;
+            color: var(--bmw-grey);
+            margin-bottom: 40px;
+            line-height: 1.5;
+        }
+        
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .btn {
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background-color: var(--bmw-blue);
+            color: white;
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--bmw-light-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--bmw-blue);
+            border: 1px solid var(--bmw-blue);
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(0, 102, 177, 0.05);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .next-steps {
+            background-color: rgba(0, 102, 177, 0.05);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .next-steps-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: var(--bmw-dark-grey);
+        }
+        
+        .next-steps-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            color: var(--bmw-grey);
+        }
+        
+        .next-steps-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--bmw-blue);
+            font-weight: bold;
+        }
+        
+        .success-footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: var(--bmw-grey);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo-container">
+                <img src="images/bmw-logo-real.svg" alt="BMW Logo" class="bmw-logo">
+            </a>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="modeles-configurateur.html">Modèles & Configurateur</a></li>
+                    <li class="nav-item"><a href="gamme-electrique.html">Gamme électrique</a></li>
+                    <li class="nav-item"><a href="acheter.html">Acheter</a></li>
+                    <li class="nav-item"><a href="marque-services.html">Marque & Services</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" class="icon-link icon-active" aria-label="Mon compte">
+                    <span class="icon icon-user"></span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Panier">
+                    <span class="icon icon-cart"></span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Favoris">
+                    <span class="icon icon-heart"></span>
+                </a>
+                <a href="#" class="icon-link" aria-label="Recherche">
+                    <span class="icon icon-search"></span>
+                </a>
+                <a href="#" class="signup-button">Mon compte</a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menu">
+                <span class="menu-icon"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <div class="success-page">
+            <div class="success-container">
+                <div class="success-icon">✓</div>
+                <h1 class="success-title">Votre compte a été créé avec succès !</h1>
+                <p class="success-message">
+                    Bienvenue dans l'univers BMW. Vous pouvez maintenant profiter de tous nos services exclusifs 
+                    et personnaliser votre expérience BMW.
+                </p>
+                
+                <div class="action-buttons">
+                    <a href="modeles-configurateur.html" class="btn btn-primary">Explorer les modèles</a>
+                    <a href="index.html" class="btn btn-outline">Accueil</a>
+                </div>
+                
+                <div class="next-steps">
+                    <h3 class="next-steps-title">Que faire maintenant ?</h3>
+                    <ul class="next-steps-list">
+                        <li>Complétez votre profil pour une expérience personnalisée</li>
+                        <li>Découvrez et configurez votre BMW idéale</li>
+                        <li>Prenez rendez-vous chez votre concessionnaire pour un essai</li>
+                        <li>Explorez nos offres de financement adaptées à vos besoins</li>
+                    </ul>
+                </div>
+                
+                <div class="success-footer">
+                    <p>Nous vous avons envoyé un e-mail de confirmation à l'adresse que vous avez fournie.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <h3 class="footer-title">Découvrir BMW</h3>
+                    <ul class="footer-links">
+                        <li><a href="modeles-configurateur.html">Modèles</a></li>
+                        <li><a href="gamme-electrique.html">Électrique</a></li>
+                        <li><a href="#">Hybride</a></li>
+                        <li><a href="modeles-configurateur.html">Configurateur</a></li>
+                        <li><a href="#">Promotions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="marque-services.html">Service après-vente</a></li>
+                        <li><a href="marque-services.html">Garantie</a></li>
+                        <li><a href="marque-services.html">Assistance</a></li>
+                        <li><a href="marque-services.html">Pièces & Accessoires</a></li>
+                        <li><a href="marque-services.html">Prise de rendez-vous</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Acheter</h3>
+                    <ul class="footer-links">
+                        <li><a href="acheter.html">Trouver un concessionnaire</a></li>
+                        <li><a href="acheter.html">Demande d'essai</a></li>
+                        <li><a href="acheter.html">Brochures & Tarifs</a></li>
+                        <li><a href="acheter.html">Offres de financement</a></li>
+                        <li><a href="acheter.html">BMW Premium Selection</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3 class="footer-title">Univers BMW</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">BMW Motorsport</a></li>
+                        <li><a href="#">BMW Individual</a></li>
+                        <li><a href="#">BMW M</a></li>
+                        <li><a href="#">Événements</a></li>
+                        <li><a href="#">Carrières</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook" class="social-icon icon-facebook"></a>
+                    <a href="#" aria-label="Twitter" class="social-icon icon-twitter"></a>
+                    <a href="#" aria-label="Instagram" class="social-icon icon-instagram"></a>
+                    <a href="#" aria-label="YouTube" class="social-icon icon-youtube"></a>
+                </div>
+                <div class="footer-legal">
+                    <ul class="legal-links">
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Cookies</a></li>
+                        <li><a href="#">CGU</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <p class="copyright">© BMW France 2023</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

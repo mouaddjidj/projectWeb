@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 200">
+  <rect x="5" y="5" width="90" height="190" rx="5" fill="#ffffff" stroke="#000000" stroke-width="1"/>
+  
+  <!-- Header with "A" rating -->
+  <rect x="10" y="10" width="80" height="30" fill="#4caf50"/>
+  <text x="50" y="32" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">A</text>
+  
+  <!-- Rating bars -->
+  <rect x="10" y="45" width="80" height="15" fill="#4caf50"/>
+  <text x="20" y="57" font-family="Arial, sans-serif" font-size="10" fill="white">A</text>
+  
+  <rect x="10" y="65" width="70" height="15" fill="#8bc34a"/>
+  <text x="20" y="77" font-family="Arial, sans-serif" font-size="10" fill="white">B</text>
+  
+  <rect x="10" y="85" width="60" height="15" fill="#cddc39"/>
+  <text x="20" y="97" font-family="Arial, sans-serif" font-size="10" fill="white">C</text>
+  
+  <rect x="10" y="105" width="50" height="15" fill="#ffeb3b"/>
+  <text x="20" y="117" font-family="Arial, sans-serif" font-size="10" fill="white">D</text>
+  
+  <rect x="10" y="125" width="40" height="15" fill="#ffc107"/>
+  <text x="20" y="137" font-family="Arial, sans-serif" font-size="10" fill="white">E</text>
+  
+  <rect x="10" y="145" width="30" height="15" fill="#ff9800"/>
+  <text x="20" y="157" font-family="Arial, sans-serif" font-size="10" fill="white">F</text>
+  
+  <rect x="10" y="165" width="20" height="15" fill="#ff5722"/>
+  <text x="20" y="177" font-family="Arial, sans-serif" font-size="10" fill="white">G</text>
+  
+  <!-- CO2 text -->
+  <text x="50" y="190" font-family="Arial, sans-serif" font-size="8" fill="black" text-anchor="middle">0 g CO2/km</text>
+</svg>
